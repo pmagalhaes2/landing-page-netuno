@@ -16,6 +16,7 @@
   --default-padding: 2rem 10rem;
   --footer-padding: 5rem 10rem;
   --form-padding: 2rem;
+  --card-padding: 2rem 4rem;
 }
 
 html {
@@ -34,15 +35,21 @@ ul {
   list-style: none;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 /* Cabeçalho */
 header {
   background-color: var(--blue);
+  display: flex;
+  justify-content: space-around;
   padding: var(--default-padding);
 
   > nav {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
 
     > ul {
       align-items: center;
@@ -161,7 +168,7 @@ main {
   background-color: var(--blue);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: var(--default-padding);
   width: 100%;
 
@@ -190,9 +197,10 @@ main {
         gap: 1rem;
         padding: var(--form-padding);
 
-        > h2 {
+        > h3 {
           color: var(--light-grey);
-          font-weight: 500;
+          font-size: 1.25rem;
+          font-weight: 600;
         }
 
         > h4 {
@@ -368,9 +376,8 @@ main {
       gap: 1rem;
       width: 30rem;
 
-      > h1 {
+      > h2 {
         color: var(--light-blue);
-        font-size: 2.5rem;
       }
 
       > p {
@@ -379,6 +386,125 @@ main {
         &:nth-child(3) {
           font-weight: 700;
         }
+      }
+    }
+  }
+}
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: var(--default-padding);
+}
+
+/* Objetivos */
+.objective-section {
+  background-color: var(--blue);
+
+  > h2 {
+    color: var(--white);
+  }
+
+  > .objective-container {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+
+    > .objective-card {
+      align-items: center;
+      background-color: var(--white);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      height: 15.625rem;
+      justify-content: space-around;
+      padding: var(--card-padding);
+      text-align: center;
+      width: 25rem;
+
+      > h3 {
+        font-size: 1.5rem;
+      }
+
+      > p {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* Jornada */
+.journey-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: space-between;
+
+  > h2 {
+    background: -webkit-linear-gradient(145deg, var(--blue), var(--light-blue));
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      content: url(./assets/Elements/Vector2.png);
+    }
+
+    &::after {
+      content: url(./assets/Elements/Vector2.png);
+    }
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .card {
+      align-items: center;
+      border-radius: 10px;
+      background-color: var(--blue);
+      color: var(--white);
+      font-weight: 300;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 25rem;
+
+      > img {
+        background-color: var(--white);
+        border-radius: 10px;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  > button {
+    background-color: var(--black);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    padding: 1rem 2rem;
+
+    > p {
+      align-items: center;
+      display: flex;
+      gap: 0.2rem;
+
+      > span {
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      > img {
+        margin-left: 1rem;
       }
     }
   }
